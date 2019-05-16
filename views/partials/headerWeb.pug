@@ -62,14 +62,40 @@ header.header
           //-   a(href='blog.html') News
           li
             a(href='contact.html') Contato
-      //- .add_listing.text-center.trans_200
-      //-   a(href='#') +Add Listing
-      .log_reg
-        ul.d-flex.flex-row.align-items-center.justify-content-start
-          li
-            a(href='/login') Entrar
-          li
-            a(href='signup') Registrar
+         
+          .log_reg
+            if !user
+              ul.d-flex.flex-row.align-items-center.justify-content-start
+                .add_listing.text-center.trans_200
+                            a(href='/login') Entrar
+                //- .add_listing.text-center.trans_200
+                //-             a(href='/signup') Registrar
+                //- li(class=(title === 'Login') ? '.active' : undefined)
+                //-   a.nav-link(href='/login') Entrar
+                //- li(class=(title === 'Create Account') ? '.active' : undefined)
+                //-   a.nav-link(href='/signup') Registrar
+            else
+              ul.d-flex.flex-row.align-items-center.justify-content-start
+                li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
+                  a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
+                    //- if user.profile.picture
+                    //-   img(src=user.profile.picture)
+                    //- else
+                    //-   img(src=user.gravatar(60))
+                    span= user.profile.name || user.email || user.id
+                    i.caret
+                  ul.dropdown-menu
+                    li.dropdown-item
+                      a(href='/account') Minha conta
+                    li.divider.dropdown-item
+                    li.dropdown-item
+                      a(href='/logout') Sair
+
+        //- ul.d-flex.flex-row.align-items-center.justify-content-start
+        //-   li
+        //-     a(href='/login') Entrar
+        //-   li
+        //-     a(href='signup') Registrar
       .hamburger
         i.fa.fa-bars.trans_200
 
