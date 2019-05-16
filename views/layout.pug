@@ -6,24 +6,55 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='theme-color' content='#4DA5F4')
     meta(name='csrf-token', content=_csrf)
-    title #{title} - Hackathon Starter
+    title #{title} - UndefinedPet
     link(rel='shortcut icon', href='/favicon.png')
-    link(rel='stylesheet', href='/css/main.css')
+    //- link(rel='stylesheet', href='/css/main.css')
+
+
+    link(rel='stylesheet' type='text/css' href='/css/bootstrap-4.1.2/bootstrap.min.css')
+    link(href='/plugins/font-awesome-4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' type='text/css' href='/plugins/OwlCarousel2-2.3.4/owl.carousel.css')
+    link(rel='stylesheet' type='text/css' href='/plugins/OwlCarousel2-2.3.4/owl.theme.default.css')
+    link(rel='stylesheet' type='text/css' href='/plugins/OwlCarousel2-2.3.4/animate.css')
+    link(rel='stylesheet' type='text/css' href='/css/main_styles.css')
+    link(rel='stylesheet' type='text/css' href='/css/responsive.css')
+
+    
     block head
 
   body
     include partials/header
 
-    .container
+    .super_container
+      include partials/headerWeb
+
+    .super_container
       include partials/flash
       block content
 
-    include partials/footer
+    //- include partials/footer
 
-    script(src='/js/lib/jquery.min.js')
-    script(src='/js/lib/popper.min.js')
-    script(src='/js/lib/bootstrap.min.js')
-    script(src='/js/main.js')
+
+    script(src='/js/jquery-3.3.1.min.js')
+    script(src='/css/bootstrap-4.1.2/popper.js')
+    script(src='/css/bootstrap-4.1.2/bootstrap.min.js')
+    script(src='/plugins/greensock/TweenMax.min.js')
+    script(src='/plugins/greensock/TimelineMax.min.js')
+    script(src='/plugins/scrollmagic/ScrollMagic.min.js')
+    script(src='/plugins/greensock/animation.gsap.min.js')
+    script(src='/plugins/greensock/ScrollToPlugin.min.js')
+    script(src='/plugins/Isotope/isotope.pkgd.min.js')
+    script(src='/plugins/OwlCarousel2-2.3.4/owl.carousel.js')
+    script(src='/plugins/easing/easing.js')
+    script(src='/plugins/progressbar/progressbar.min.js')
+    script(src='/plugins/parallax-js-master/parallax.min.js')
+    script(src='/js/custom.js')
+
+
+    //- script(src='/js/lib/jquery.min.js')
+    //- script(src='/js/lib/popper.min.js')
+    //- script(src='/js/lib/bootstrap.min.js')
+    //- script(src='/js/main.js')
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID
     script.

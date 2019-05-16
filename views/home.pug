@@ -1,27 +1,341 @@
 extends layout
 
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
-  hr
-  .row
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
+  .super_container_inner
+    .super_overlay
+    // Home
+    .home
+      // Home Slider
+      .home_slider_container
+        .owl-carousel.owl-theme.home_slider
+          // Slide
+          .slide
+            //- .background_image(style='background-image:url(images/background.png)')
+            .home_container
+              .container
+                .row
+                  .col-xl-8.offset-xl-2
+                    .home_content.text-center
+                      .home_title
+                        h1 Melhores profissionais
+                      .search_form_container
+                        form#search_form.search_form(action='#')
+                          .d-flex.flex-sm-row.flex-column.align-items-sm-start.align-items-center.justify-content-sm-between
+                            input.search_input(type='text' placeholder='O que está procurando?' required='required')
+                            input.search_input(type='text' placeholder='Onde?' required='required')
+
+                            button.search_button Buscar
+          // Slide
+          //- .slide
+          //-   .background_image(style='background-image:url(images/index4.jpeg)')
+          //-   .home_container
+          //-     .container
+          //-       .row
+          //-         .col-xl-8.offset-xl-2
+          //-           .home_content.text-center
+          //-             .home_title
+          //-               h1 Encontre seu dotô
+          //-             .search_form_container
+          //-               form#search_form.search_form(action='#')
+          //-                 .d-flex.flex-sm-row.flex-column.align-items-sm-start.align-items-center.justify-content-sm-between
+          //-                   input.search_input(type='text' placeholder='What are you looking for?' required='required')
+          //-                   button.search_button Search
+          //- // Slide
+          //- .slide
+          //-   .background_image(style='background-image:url(images/index4.jpeg)')
+          //-   .home_container
+          //-     .container
+          //-       .row
+          //-         .col-xl-8.offset-xl-2
+          //-           .home_content.text-center
+          //-             .home_title
+          //-               h1 Encontre seu dotô
+          //-             .search_form_container
+          //-               form#search_form.search_form(action='#')
+          //-                 .d-flex.flex-sm-row.flex-column.align-items-sm-start.align-items-center.justify-content-sm-between
+          //-                   input.search_input(type='text' placeholder='What are you looking for?' required='required')
+          //-                   button.search_button Search
+        // Home Slider Dots
+        .home_slider_dots
+          ul#home_slider_custom_dots.home_slider_custom_dots
+            //- li.home_slider_custom_dot.active 01.
+            //- li.home_slider_custom_dot 02.
+            //- li.home_slider_custom_dot 03.
+    // Categories
+    .categories
+      .container
+        .row
+          .col
+            .categories_container.d-flex.flex-md-row.flex-column.align-items-start.justify-content-start
+              // Category
+              .category.text-center
+                a(href='listings.html')
+                  .d-flex.flex-md-column.flex-row.align-items-md-center.align-items-md-start.align-items-center.justify-content-start
+                    .cat_icon
+                      img.svg(src='images/dog.svg' alt='https://www.flaticon.com/authors/monkik')
+                    .cat_title Cães
+              // Category
+              .category.text-center
+                a(href='listings.html')
+                  .d-flex.flex-md-column.flex-row.align-items-md-center.align-items-md-start.align-items-center.justify-content-start
+                    .cat_icon
+                      img.svg(src='images/cat.svg' alt='https://www.flaticon.com/authors/monkik')
+                    .cat_title Gatos
+              // Category
+              .category.text-center
+                a(href='listings.html')
+                  .d-flex.flex-md-column.flex-row.align-items-md-center.align-items-md-start.align-items-center.justify-content-start
+                    .cat_icon
+                      img.svg(src='images/bird.svg' alt='https://www.flaticon.com/authors/monkik')
+                    .cat_title Pássaros
+
+              // Category
+              .category.text-center
+                a(href='listings.html')
+                  .d-flex.flex-md-column.flex-row.align-items-md-center.align-items-md-start.align-items-center.justify-content-start
+                    .cat_icon
+                      img.svg(src='images/bunny.svg' alt='https://www.flaticon.com/authors/monkik')
+                    .cat_title Coelhos
+              // Category
+              .category.text-center
+                a(href='listings.html')
+                  .d-flex.flex-md-column.flex-row.align-items-md-center.align-items-md-start.align-items-center.justify-content-start
+                    .cat_icon
+                      img.svg(src='images/hamster.svg' alt='https://www.flaticon.com/authors/monkik')
+                    .cat_title Hamsters
+    // Locations
+    //- .locations.container_custom
+      .container
+        .row
+          .col
+            .section_title.text-center
+              h1 Explore Hot Locations
+            .locations_container.d-flex.flex-row.align-items-start.justify-content-between.flex-wrap
+              // Location
+              .location
+                img(src='images/location_1.jpg' alt='')
+                .location_title.text-center
+                  div
+                    a(href='single.html')
+                      | Amsterdam
+                      div +
+              // Location
+              .location
+                img(src='images/location_2.jpg' alt='')
+                .location_title.text-center
+                  div
+                    a(href='single.html')
+                      | Paris
+                      div +
+              // Location
+              .location
+                img(src='images/location_3.jpg' alt='')
+                .location_title.text-center
+                  div
+                    a(href='single.html')
+                      | Singapore
+                      div +
+              // Location
+              .location
+                img(src='images/location_4.jpg' alt='')
+                .location_title.text-center
+                  div
+                    a(href='single.html')
+                      | Chicago
+                      div +
+              // Location
+              .location
+                img(src='images/location_5.jpg' alt='')
+                .location_title.text-center
+                  div
+                    a(href='single.html')
+                      | New York
+                      div +
+    // Food
+    //- .food.container_custom
+      .container
+        .row
+          .col
+            .section_title.text-center
+              h1 Find the best food near you
+            .grid_container.grid
+              // Grid Item
+              .grid-item.grid_large
+                .food_item
+                  .food_item_tag
+                    a(href='#') Fusion
+                  .background_image(style='background-image:url(images/food_1.jpg)')
+              // Grid Item
+              .grid-item.grid_small
+                .food_item
+                  .food_item_tag
+                    a(href='#') Asian
+                  .background_image(style='background-image:url(images/food_2.jpg)')
+              // Grid Item
+              .grid-item.grid_medium
+                div
+                  .grid_half
+                    .food_item
+                      .food_item_tag
+                        a(href='#') Breakfast
+                      .background_image(style='background-image:url(images/food_3.jpg)')
+                  .grid_half
+                    .food_item
+                      .food_item_tag
+                        a(href='#') Pizza
+                      .background_image(style='background-image:url(images/food_4.jpg)')
+              // Grid Item
+              .grid-item.grid_medium
+                .food_item
+                  .food_item_tag
+                    a(href='#') Vine &amp; Dine
+                  .background_image(style='background-image:url(images/food_5.jpg)')
+              // Grid Item
+              .grid-item.grid_small
+                .food_item
+                  .food_item_tag
+                    a(href='#') Coffee
+                  .background_image(style='background-image:url(images/food_6.jpg)')
+              // Grid Item
+              .grid-item.grid_large
+                .food_item
+                  .food_item_tag
+                    a(href='#') Fine Dine
+                  .background_image(style='background-image:url(images/food_7.jpg)')
+    // How it works
+    //- .how.container_custom
+      .container
+        .row
+          .col
+            .section_title.text-center
+              h1
+                | How Directory
+                span Plus+
+                |  works
+            .icon_box_container.d-flex.flex-row.align-items-start.justify-content-between.flex-wrap
+              // Icon Box
+              .icon_box.d-flex.flex-column.align-items-center.justify-content-start.text-center
+                .icon_box_num 01.
+                .icon_box_icon
+                  img(src='images/icon_6.svg' alt='https://www.flaticon.com/authors/monkik')
+                .icon_box_title Choose a category
+                .icon_box_text
+                  p
+                    | Donec cursus, risus non fermentum lacinia, felis lectus interdum velit, in pulvinar enim justo at sem. Quisque ut semper neque. Suspendisse quam est
+              // Icon Box
+              .icon_box.d-flex.flex-column.align-items-center.justify-content-start.text-center
+                .icon_box_num 02.
+                .icon_box_icon
+                  img(src='images/icon_7.svg' alt='https://www.flaticon.com/authors/monkik')
+                .icon_box_title Find your pick
+                .icon_box_text
+                  p
+                    | Donec cursus, risus non fermentum lacinia, felis lectus interdum velit, in pulvinar enim justo at sem. Quisque ut semper neque. Suspendisse quam est
+              // Icon Box
+              .icon_box.d-flex.flex-column.align-items-center.justify-content-start.text-center
+                .icon_box_num 03.
+                .icon_box_icon
+                  img(src='images/icon_8.svg' alt='https://www.flaticon.com/authors/monkik')
+                .icon_box_title Go &amp; have fun
+                .icon_box_text
+                  p
+                    | Donec cursus, risus non fermentum lacinia, felis lectus interdum velit, in pulvinar enim justo at sem. Quisque ut semper neque. Suspendisse quam est
+    // CTA
+    //- .cta.container_custom
+      .parallax_background(data-image-src='images/cta.jpg')
+      .container
+        .row
+          .col
+            .cta_content
+              .cta_title
+                h1 Find the best places in town!
+              .cta_text
+                p
+                  | Donec cursus, risus non fermentum lacinia, felis lectus interdum velit, in pulvinar enim justo at sem. Quisque ut semper neque. Suspendisse quam est, consequat ullamcorper tellus et, fauci bus laoreet nibh.
+              .button.cta_button
+                a(href='listings.html') See the list
+    // CTA 2
+    //- .cta_2
+      .container
+        .row.row-lg-eq-height
+          .col-lg-9.cta_2_col
+            .cta_2_content
+              .cta_2_title
+                h1
+                  | Get the Directory
+                  span Plus+
+                  |  App
+              .cta_2_text
+                p
+                  | Donec cursus, risus non fermentum lacinia, felis lectus interdum velit, in pulvinar enim justo at sem. Quisque ut semper neque. Suspendisse quam est, consequat ullamcorper tellus et, fauci bus laoreet nibh.Donec cursus, risus non fermentum lacinia, felis lectus interdum velit, in pulvinar enim justo at sem.
+              .store_links.d-flex.flex-row.align-items-start.justify-content-start.flex-wrap
+                .store_link
+                  a(href='#')
+                    img(src='images/store_1.jpg' alt='')
+                .store_link
+                  a(href='#')
+                    img(src='images/store_2.jpg' alt='')
+          .col-lg-3.cta_2_col
+            .cta_2_image
+              img(src='images/cta_2.jpg' alt='')
+    // Clients
+    //- .clients
+      .container
+        .row
+          .col
+            // Clients Slider
+            .clients_slider_container
+              .owl-carousel.owl-theme.clients_slider
+                // Slide
+                .slide
+                  .client_image
+                    a(href='#')
+                      img(src='images/client_1.jpg' alt='')
+                // Slide
+                .slide
+                  .client_image
+                    a(href='#')
+                      img(src='images/client_2.jpg' alt='')
+                // Slide
+                .slide
+                  .client_image
+                    a(href='#')
+                      img(src='images/client_3.jpg' alt='')
+                // Slide
+                .slide
+                  .client_image
+                    a(href='#')
+                      img(src='images/client_4.jpg' alt='')
+                // Slide
+                .slide
+                  .client_image
+                    a(href='#')
+                      img(src='images/client_5.jpg' alt='')
+    // Footer
+    footer.footer.container_custom
+      .container
+        .row
+          .col
+            .footer_container.d-flex.flex-md-row.flex-column.align-items-center.justify-content-md-start.justify-content-center
+              .copyright.order-md-1.order-2
+                // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+                | Copyright &copy;
+                script.
+                  document.write(new Date().getFullYear());
+                |  All rights reserved | This template is made with 
+                i.fa.fa-heart-o(aria-hidden='true')
+                |  by 
+                a(href='https://colorlib.com' target='_blank') Colorlib
+                // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+              nav.footer_nav.ml-md-auto.order-md-2.order-1
+                ul.d-flex.flex-row.align-items-center.justify-content-start
+                  li.active
+                    a(href='index.html') Início
+                  li
+                    a(href='#') Sobre nós
+                  li
+                    a(href='listings.html') Contato
+                  //- li
+                  //-   a(href='blog.html') News
+                  //- li
+                  //-   a(href='contact.html') Contact

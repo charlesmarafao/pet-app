@@ -38,23 +38,40 @@
 //-               li.dropdown-item
 //-                 a(href='/logout') Logout
 
-.menu
-  .menu_container.text-right
-    .menu_close close
-    nav.menu_nav
-      ul
-        li
-          a(href='index.html') Home
-        li
-          a(href='#') About us
-        li
-          a(href='listings.html') Listings
-        li
-          a(href='blog.html') News
-        li
-          a(href='contact.html') Contact
-    .menu_link
-      a(href='#') +Add Listing
 
-      
+header.header
+  .header_overlay
+  .header_content.d-flex.flex-row.align-items-center.justify-content-start
+    // Logo
+    .logo
+      a(href='#')
+        | Undefined
+        span Pet
+        span +
+    // Header Nav
+    .header_right.d-flex.flex-row.align-items-center.justify-content-start.ml-auto
+      nav.main_nav
+        ul.d-flex.flex-row.align-items-center.justify-content-start
+          li.active
+            a(href='index.html') Início
+          li
+            a(href='#') Sobre nós
+          //- li
+          //-   a(href='listings.html') Listings
+          //- li
+          //-   a(href='blog.html') News
+          li
+            a(href='contact.html') Contato
+      //- .add_listing.text-center.trans_200
+      //-   a(href='#') +Add Listing
+      .log_reg
+        ul.d-flex.flex-row.align-items-center.justify-content-start
+          li
+            a(href='/login') Entrar
+          li
+            a(href='signup') Registrar
+      .hamburger
+        i.fa.fa-bars.trans_200
+
+    
 
