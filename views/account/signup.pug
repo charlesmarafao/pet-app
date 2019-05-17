@@ -1,23 +1,123 @@
-extends ../layout
+//- extends ../layout
 
-block content
-  .pb-2.mt-2.mb-4.border-bottom
-    h3 Sign up
-  form(id='signup-form', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='email') Email
-      .col-md-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, autocomplete='email', required)
-    .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='password') Password
-      .col-md-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password', autocomplete='new-password', required)
-    .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='confirmPassword') Confirm Password
-      .col-md-7
-        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', autocomplete='new-password', required)
-    .form-group.offset-sm-3.col-md-7.pl-2
-      button.btn.btn-success(type='submit')
-        i.fas.fa-user-plus.fa-sm
-        | Signup
+//- block content
+//-   .pb-2.mt-2.mb-4.border-bottom
+//-     h3 Sign up
+//-   form(id='signup-form', method='POST')
+//-     input(type='hidden', name='_csrf', value=_csrf)
+//-     .form-group.row
+//-       label.col-md-3.col-form-label.font-weight-bold.text-right(for='email') Email
+//-       .col-md-7
+//-         input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, autocomplete='email', required)
+//-     .form-group.row
+//-       label.col-md-3.col-form-label.font-weight-bold.text-right(for='password') Password
+//-       .col-md-7
+//-         input.form-control(type='password', name='password', id='password', placeholder='Password', autocomplete='new-password', required)
+//-     .form-group.row
+//-       label.col-md-3.col-form-label.font-weight-bold.text-right(for='confirmPassword') Confirm Password
+//-       .col-md-7
+//-         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', autocomplete='new-password', required)
+//-     .form-group.offset-sm-3.col-md-7.pl-2
+//-       button.btn.btn-success(type='submit')
+//-         i.fas.fa-user-plus.fa-sm
+//-         | Signup
+
+
+include ../partials/flash
+  //- include ../partials/header
+
+  //- .super_container
+  //-   include ../partials/headerWeb
+
+doctype html
+head
+  title Login
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // 
+  link(rel='icon' type='image/png' href='/favicon.ico')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/vendor/bootstrap/css/bootstrap.min.css')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/fonts/iconic/css/material-design-iconic-font.min.css')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/vendor/animate/animate.css')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/vendor/css-hamburgers/hamburgers.min.css')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/vendor/animsition/css/animsition.min.css')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/vendor/select2/select2.min.css')
+  // 
+  link(rel='stylesheet' type='text/css' href='/plugins/account/vendor/daterangepicker/daterangepicker.css')
+  // 
+  //- link(rel='stylesheet' type='text/css' href='/css/main_styles.css')
+
+  link(rel='stylesheet' type='text/css' href='/plugins/account/css/util.css')
+  link(rel='stylesheet' type='text/css' href='/plugins/account/css/main.css')
+  // 
+.limiter
+  .container-login100(style="background-image: url('/images/background.png');")
+    include ../partials/flash
+    .wrap-login100.p-l-55.p-r-55.p-t-65.p-b-54
+      form(id='signup-form', method='POST').login100-form.validate-form
+        input(type='hidden', name='_csrf', value=_csrf)
+
+        span.login100-form-title.p-b-49
+          | Cadastrar
+        .wrap-input100.validate-input.m-b-23(data-validate='Usuário é um campo necessário')
+          span.label-input100 Email
+          input.input100(type='email', name='email', id='email', placeholder='Escreva seu email', autofocus, autocomplete='email')
+          span.focus-input100(data-symbol='')
+        .wrap-input100.validate-input.m-b-23(data-validate='Senha é um campo necessário')
+          span.label-input100 Senha
+          input.input100(type='password', name='password', id='password', placeholder='Escreva sua senha', autocomplete='new-password')
+          span.focus-input100(data-symbol='')
+        .wrap-input100.validate-input(data-validate='Confirmar senha é um campo necessário')
+          span.label-input100 Confirmar senha
+          input.input100(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirme sua senha', autocomplete='new-password')
+          span.focus-input100(data-symbol='')
+        .text-right.p-t-8.p-b-31
+          a(href='/login')
+            | Já tenho uma conta
+        .container-login100-form-btn
+          .wrap-login100-form-btn
+            .login100-form-bgbtn
+            button(type='submit').login100-form-btn
+              | Cadastrar
+        .txt1.text-center.p-t-54.p-b-20
+          span
+            | Ou entre usando
+        .flex-c-m
+          a.login100-social-item.bg1(href='/auth/facebook')
+            i.fa.fa-facebook
+          a.login100-social-item.bg3(href='/auth/google')
+            i.fa.fa-google
+        //- .flex-col-c.p-t-15
+        //-   span.txt1.p-b-17
+        //-     | Não tem uma conta?
+        //-   a.txt2(href='/signup')
+        //-     | Cadastre-se
+#dropDownSelect1
+
+
+// 
+script(src='/plugins/account/vendor/jquery/jquery-3.2.1.min.js')
+// 
+script(src='/plugins/account/vendor/animsition/js/animsition.min.js')
+// 
+script(src='/plugins/account/vendor/bootstrap/js/popper.js')
+script(src='/plugins/account/vendor/bootstrap/js/bootstrap.min.js')
+// 
+script(src='/plugins/account/vendor/select2/select2.min.js')
+// 
+script(src='/plugins/account/vendor/daterangepicker/moment.min.js')
+script(src='/plugins/account/vendor/daterangepicker/daterangepicker.js')
+// 
+script(src='/plugins/account/vendor/countdowntime/countdowntime.js')
+// 
+script(src='/plugins/account/js/main.js')
+
+
