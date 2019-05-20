@@ -21,9 +21,10 @@ block content
                       .search_form_container
                         form#search_form.search_form(action='#')
                           .d-flex.flex-sm-row.flex-column.align-items-sm-start.align-items-center.justify-content-sm-between
-                            input.search_input(type='text' placeholder='O que está procurando?' required='required')
-                            input.search_input(type='text' placeholder='Onde?' required='required')
-
+                            input#autocomplete_search.search_input(type='text' placeholder='Onde está procurando?' required='required')
+                            input.search_input(type='text' placeholder='O que?' required='required')
+                            input(type='hidden' name='lat')
+                            input(type='hidden' name='long')
                             button.search_button Buscar
           // Slide
           //- .slide
